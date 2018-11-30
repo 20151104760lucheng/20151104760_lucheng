@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +33,7 @@ canvas{z-index:-1;position:absolute;}
  		没有账号？<a href="JavaScript:openAddPage();" style="color: red;">立即注册</a>
 	 </dd>
 	 <dd>
-	 </dd>
+	 </dd> 
 	 <dd style="color: red" id="infoDiv">${infoError}</dd>
 	</dl>
 </form>
