@@ -1,9 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>   
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="/form_util/page/root.jsp"%>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 <title>图书借阅管理系统</title>
-
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="${root}/form/login/css/style.css" />
 <link rel="stylesheet"
@@ -13,6 +14,28 @@
 body{height:100%;background:#16a085;overflow:hidden;}
 canvas{z-index:-1;position:absolute;}
 </style>
+<script src="${root}/form/login/js/jquery.js"></script>
+<script src="${root}/form/login/js/jquery-1.8.3.js"></script>
+<script src="${root}/form/login/js/verificationNumbers.js"></script>
+<script src="${root}/form/login/js/Particleground.js"></script>
+<script src="${root}/form_util/util/util_js/validateUtil.js"></script>
+<script src="${root}/form_util/util/util_js/bodyUtil.js"></script>
+<script src="${root}/form_util/util/util_js/jsonUtil.js"></script>
+<script src="${root}/form_util/util/util_js/ajaxUtil.js"></script>
+<script src="${root}/form/login/js/login.js"></script>
+<script src="${root}/form_util/util/sys_js/jquery.js"></script>
+<script src="${root}/form_util/util/util_js/ajaxUtil.js"></script>
+<script src="${root}/form_util/util/util_js/alertDivUtil.js"></script>
+<script src="${root}/form_util/util/util_js/bodyUtil.js"></script>
+<script src="${root}/form_util/util/util_js/validateUtil.js"></script>
+<script src="${root}/form_util/util/util_js/jsonUtil.js"></script>
+<script src="${root}/form_util/util/util_js/publicJsonUtil.js"></script>
+<script src="${root}/form_util/util/util_js/findByIdUtil.js"></script>
+<script src="${root}/form_util/util/util_js/strUtil.js"></script>
+<script src="${root}/form/sys/zhangHu/js/zhangHu.js"></script>
+<script>
+
+</script>
 </head>
 <body style="background-color: #000;">
 <form isValidate="y" onsubmit="return false;">
@@ -34,7 +57,7 @@ canvas{z-index:-1;position:absolute;}
  		没有账号？<a href="JavaScript:openAddPage();" style="color: red;">立即注册</a>
 	 </dd>
 	 <dd>
-	 </dd> 
+	 </dd>
 	 <dd style="color: red" id="infoDiv">${infoError}</dd>
 	</dl>
 </form>
