@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<something-else-entirely>
+	<proxool>
+		<alias>myPoolJdbc</alias>
+		<driver-url>jdbc:mysql://localhost:3306/db_booklend?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF-8</driver-url>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="root" />
+			<property name="password" value="123456" />
+		</driver-properties>
+		<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+		<maximum-new-connections>20</maximum-new-connections>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>5</minimum-connection-count>
+		<house-keeping-test-sql>select CURRENT_DATE</house-keeping-test-sql>
+	</proxool>
+</something-else-entirely>
