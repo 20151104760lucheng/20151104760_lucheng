@@ -120,7 +120,7 @@ function loadingDiv(){
 	//操作遮盖曾
 	var dialog_maskCss='position:fixed;left:0;top:0;right:0;bottom:0;background:#fefefe;filter:alpha(opacity=0);opacity:.5;display:block;overflow-x:hidden;overflow-y:auto;z-index:1000;';
 	//在页面中创造一个新的DIV并用户显示
-	var divHtml = '<div id="dialodIndex" onclick="closeLoadingDiv()" title="点击即消失" style="'+dialog_maskCss+'"><div id="'+divId+'" name="loadingDiv" style="'+styleCss+'">&nbsp;&nbsp;<img src="'+getRoot()+'/form_util/util/images/loading.gif" style="width: 30px;height: 30px;"/></div></div>';
+	var divHtml = '<div id="dialodIndex" onclick="closeLoadingDiv()" title="点击即消失" style="'+dialog_maskCss+'"><div id="'+divId+'" name="loadingDiv" style="'+styleCss+'">&nbsp;&nbsp;<img src="form_util/util/images/loading.gif" style="width: 30px;height: 30px;"/></div></div>';
 	//拼加在body中
 	$("body").append(divHtml);
 	var win = $("#"+divId);

@@ -76,7 +76,7 @@ function loadTrTdClickCheckbox(){
  */
 function initPage(){
 	loadTrClick();
-	initSort();
+	//initSort();
 }
 
 /*********************处理页面排序******************************************/

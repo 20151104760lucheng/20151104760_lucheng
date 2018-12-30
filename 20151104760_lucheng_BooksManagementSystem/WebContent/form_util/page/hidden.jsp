@@ -1,6 +1,5 @@
 <%@ page language="java"  pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="/WEB-INF/myTag.tld " prefix="myTag"%>  
 <input id="root" style="display: none;" value="${root}">
 <input id="lrzhm" style="display: none;"  value="${zhangHu.zh_zhm}">
 <input id="zh_id" style="display: none;"  value="${zhangHu.zh_id}">
