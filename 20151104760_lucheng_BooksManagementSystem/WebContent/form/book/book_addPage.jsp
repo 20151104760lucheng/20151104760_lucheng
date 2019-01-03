@@ -5,7 +5,7 @@
 	<form class="form-horizontal" isValidate="y" onsubmit="return false;">
 		<div class="form-group text-center">
 			<font size="4"> <strong>录入</strong> </font>
-		</div>
+		</div> 
 		
 		<div class="form-group field">
 			<label class="col-sm-3 control-label no-padding-right">
