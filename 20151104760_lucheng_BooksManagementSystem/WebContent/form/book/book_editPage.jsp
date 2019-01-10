@@ -9,12 +9,12 @@
 		
 		<div class="form-group field">
 			<label class="col-sm-3 control-label no-padding-right">
-				标题
+				书名
 			</label>
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right">
 					<input type="text" placeholder="标题" id="update_title" class="col-xs-12"
-						data-validate="required:标题必填" value="${map.title}" onchange="$('#isUpdate').attr('value','y')">
+						data-validate="required:书名必填" value="${map.title}" onchange="$('#isUpdate').attr('value','y')">
 				</span>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 			</label>
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right">
-					<select id="update_status" class="col-xs-12" onchange="$('#isUpdate').attr('value','y')">
+					<select id="update_status" class="col-xs-12">
 						<option value="0" <c:if test="${map.status==0 }">selected="selected"</c:if>>空闲</option>
 						<option value="1" <c:if test="${map.status==1 }">selected="selected"</c:if>>外借</option>
 					</select>

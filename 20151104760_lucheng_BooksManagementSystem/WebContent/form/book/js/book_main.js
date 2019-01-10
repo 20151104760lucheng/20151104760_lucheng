@@ -7,7 +7,7 @@ $(function(){
 	//进行页面处理 如：排序 或其他之内
 	initPage();
 })
-/************************系统生成方法开始******************************/
+/************************方法开始******************************/
 function query_Book(page){
 	loadingDiv();
 	var query_title = $("#query_title").val();
@@ -129,4 +129,20 @@ function deleteMain(jsonObj){
 	};
 	getAjaxData(jsonAjax);
 }
-/************************系统生成方法完毕******************************/
+
+
+function addApplyData(student_id,book_id){
+	var jsonObj = {
+			'user_id':student_id,
+			'book_id':book_id
+	};
+	var jsonTemp = publicFieldsnJSON(jsonObj);
+	var jsonAjax = {
+		"url" : "apply_updateData.do",
+		"jsonData" : {"mapStr":jsonToStr(jsonTemp)},
+		"methodName" : "query_Book(0)",
+		"toID" : "tbodyData"
+	};
+	getAjaxData(jsonAjax);
+}
+/************************方法完毕******************************/

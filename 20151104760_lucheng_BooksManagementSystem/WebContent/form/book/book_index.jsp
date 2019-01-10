@@ -30,7 +30,7 @@
 								<fieldset>
 									
 									<label>
-										标题
+										书名
 									</label>
 									<input type="text" id="query_title" placeholder="标题" value="${map.title}">
 									
@@ -66,7 +66,7 @@
 						序号
 					</th>
 <th field="title"  onclick="querySort(this,'query_Book')">
-						标题
+						书名
 					</th>
 					<th field="number"  onclick="querySort(this,'query_Book')">
 						编号
@@ -132,7 +132,7 @@
 						</td>
 						<td>
 							<div class="hidden-sm hidden-xs btn-group">
-								<button class="btn btn-xs btn-info" onclick="openEditPage('${map.id}')" title="编辑">编辑</button><button class="btn btn-xs btn-danger" onclick="confirmDeleteDate('${map.id}','${map.title}')" title="删除">删除</button>
+								<button class="btn btn-xs btn-info" onclick="openEditPage('${map.id}')" title="编辑">编辑</button><button class="btn btn-xs btn-danger" onclick="confirmDeleteDate('${map.id}','${map.username}')" title="删除">删除</button>
 							</div>
 						</td>
 					</tr>

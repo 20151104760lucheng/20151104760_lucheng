@@ -5,16 +5,16 @@
 	<form class="form-horizontal" isValidate="y" onsubmit="return false;">
 		<div class="form-group text-center">
 			<font size="4"> <strong>录入</strong> </font>
-		</div> 
+		</div>
 		
 		<div class="form-group field">
 			<label class="col-sm-3 control-label no-padding-right">
-				标题
+				书名
 			</label>
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right">
-				<input type="text" placeholder="标题" id="update_title" class="col-xs-12"
-					data-validate="required:标题必填">
+				<input type="text" placeholder="书名" id="update_title" class="col-xs-12"
+					data-validate="required:书名必填">
 				</span>
 			</div>
 		</div>
