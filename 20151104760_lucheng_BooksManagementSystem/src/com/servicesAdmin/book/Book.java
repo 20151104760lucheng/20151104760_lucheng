@@ -6,7 +6,7 @@ import java.util.Map;
  */ 
 public interface Book {
 
-/************************系统生成方法开始******************************/
+/************************方法开始******************************/
 
 public List<Map<String, Object>> tBody(Map<String, String> mapStr)throws Exception;
 
@@ -18,6 +18,8 @@ public Map<String, Object> update_Data(Map<String, String> mapStr) throws Except
 
 public void delete_Data(Map<String, String> mapStr) throws Exception;
 
+public Map<String, Object> update_status(Map<String, String> mapStr) throws Exception;
+
  }
 
-/************************系统生成方法完毕******************************/
+/************************方法完毕******************************/

@@ -17,7 +17,7 @@ public class BookImp implements Book {
 	@Resource
 	private GYDAO gyDAOimp;// dao操作类
 
-	/************************系统生成方法开始******************************/
+	/************************方法开始******************************/
 
 	private void getSQL(Map<String, String> mapStr,StringBuffer sql,Map<String, Object> mapSQLParameter) throws Exception {
 		sql.append("select t.id,t.title,t.number,t.aunthor,t.publishing,t.vision,t.status,t.gxsj,t.bz,t.lrsj,t.zt,t.lrzh");
@@ -97,6 +97,20 @@ public class BookImp implements Book {
 		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
 		return this.find_Map(mapStr);
 	}
+	
+	public Map<String, Object> update_status(Map<String, String> mapStr) throws Exception{
+		mapStr.put("gxsj", UtilSql.getGXSJ());
+		StringBuffer sql = new StringBuffer(); Map<String, Object> mapSQLParameter = new HashMap<String, Object>();
+		sql.append("update book set gxsj=:gxsj");
+		sql.append(" ,status=:status ");
+		sql.append(" where id=:id");
+		mapStr.put(SysFinal.BZ_KEY, UtilStr.codeUTF_8(mapStr.get(SysFinal.BZ_KEY)));
+		mapSQLParameter.put("status", mapStr.get("status"));
+		mapSQLParameter.put("id", mapStr.get("id"));
+		mapSQLParameter.put("gxsj", mapStr.get("gxsj"));
+		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
+		return this.find_Map(mapStr);
+	}
 
 	public void delete_Data(Map<String, String> mapStr) throws Exception{
 		StringBuffer sql = new StringBuffer(); Map<String, Object> mapSQLParameter = new HashMap<String, Object>();
@@ -105,5 +119,5 @@ public class BookImp implements Book {
 		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
 	}
 
-	/************************系统生成方法完毕******************************/
+	/************************方法完毕******************************/
 }

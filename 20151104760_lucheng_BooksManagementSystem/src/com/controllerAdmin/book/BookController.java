@@ -20,18 +20,22 @@ public class BookController  extends ControllerUtil {
 	@Resource
 	private Book  bookImp;
 
-	/************************系统生成方法开始******************************/
+	/************************方法开始******************************/
 
 	@RequestMapping(value ="/book_index.do")
 	public String index(HttpServletRequest req,HttpServletResponse resp) {
 		try {
 			Map<String,String> mapStr = UtilJson.toMap(req.getParameter("mapStr"));
+			if(req.getParameter("isUser")!=null){
+				return this.tBodyUtil(bookImp.tBody(mapStr),mapStr,"form/book/book_user_index.jsp",req,resp);
+			}
 			return this.tBodyUtil(bookImp.tBody(mapStr),mapStr,"form/book/book_index.jsp",req,resp);
 		} catch (Exception e) {
 			this.errorResp(e,resp);
 		}
 		return this.returnError();
 	}
+	
 
 	@RequestMapping(value ="/book_addPage.do")
 	public String addPage(HttpServletRequest req,HttpServletResponse resp) {
@@ -48,8 +52,10 @@ public class BookController  extends ControllerUtil {
 		try {
 			Map<String,String> mapStr = UtilJson.toMap(req.getParameter("mapStr"));
 			if (UtilValiDate.isEmpty(mapStr.get("id"))) {
-				Map<String, Object> mapObj = bookImp.update_Data(mapStr);
-				return this.updateDataUpdate(mapObj,"form/book/book_tr.jsp",req,resp);
+				if ("y".equals(mapStr.get(SysFinal.ISUPDATE_KEY)))  {	
+					Map<String, Object> mapObj = bookImp.update_Data(mapStr);
+					return this.updateDataUpdate(mapObj,"form/book/book_tr.jsp",req,resp);
+				}	
 			} else { 
 				Map<String, Object> mapObj = bookImp.add_Data(mapStr);
 				return this.updateDataUpdate(mapObj,"form/book/book_tr.jsp",req,resp);
@@ -94,6 +100,6 @@ public class BookController  extends ControllerUtil {
 		
 	}
 
-	/************************系统生成方法完毕******************************/
+	/************************方法完毕******************************/
 }
 
