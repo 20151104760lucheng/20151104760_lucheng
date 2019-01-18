@@ -13,7 +13,7 @@
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right"> 
 					<input type="text" placeholder="邮箱" id="updateZhangHuMing" class="col-xs-12"
-						onchange="senEmail();" data-validate="required:帐户名必填,ajax#zhangHu_isExistName.do?zh_zhm=:用户名已注册"/>
+						 data-validate="required:帐户名必填,ajax#zhangHu_isExistName.do?zh_zhm=:用户名已注册"/>
 				</span>
 			</div>
 		</div>
@@ -33,14 +33,6 @@
 				</span>
 			</div>
 		</div>
-		<div class="form-group field">
-			<div class="col-sm-5">
-				<span class="block input-icon input-icon-right"> 
-					<input type="password" placeholder="验证码" id="updateZhangHuMiMa" class="col-xs-12"
-						 data-validate="required:请填写验证码,ajax#yanzheng.do?yzm=:验证码错误">
-				</span>
-			</div>
-		</div>
 		<div class="form-actions center">
 			<button type="button" class="btn btn-sm btn-lg" onclick="closeShowDiv()">
 				返回
@@ -55,15 +47,6 @@
 </div>
 <script>
 	initValidate();
-	function senEmail(){
-		var email = $("#updateZhangHuMing").val();
-		if(email==null){
-			return;
-		}
-		$.post("seneEmail.do?zh_zhm="+email,function(){
-			console.log("验证码已发送");
-		})
-	}
 	
 </script>
 
