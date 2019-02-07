@@ -17,7 +17,7 @@ public class MemberImp implements Member {
 	@Resource
 	private GYDAO gyDAOimp;// dao操作类
 
-	/************************系统生成方法开始******************************/
+	/************************方法开始******************************/
 
 	private void getSQL(Map<String, String> mapStr,StringBuffer sql,Map<String, Object> mapSQLParameter) throws Exception {
 		sql.append("select t.id,t.username,t.password,t.phone,t.nick_name,t.sex,t.age,t.gxsj,t.bz,t.lrsj,t.zt,t.lrzh");
@@ -101,5 +101,5 @@ public class MemberImp implements Member {
 		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
 	}
 
-	/************************系统生成方法完毕******************************/
+	/************************方法完毕******************************/
 }

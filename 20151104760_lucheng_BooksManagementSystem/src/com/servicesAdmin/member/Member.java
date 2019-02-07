@@ -6,7 +6,7 @@ import java.util.Map;
  */ 
 public interface Member {
 
-/************************系统生成方法开始******************************/
+/************************方法开始******************************/
 
 public List<Map<String, Object>> tBody(Map<String, String> mapStr)throws Exception;
 
@@ -20,4 +20,4 @@ public void delete_Data(Map<String, String> mapStr) throws Exception;
 
  }
 
-/************************系统生成方法完毕******************************/
+/************************方法完毕******************************/

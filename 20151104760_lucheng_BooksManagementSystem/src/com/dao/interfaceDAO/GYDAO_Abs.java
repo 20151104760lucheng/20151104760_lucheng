@@ -86,16 +86,6 @@ public abstract class GYDAO_Abs extends NamedParameterJdbcDaoSupport implements 
 	 * @throws Exception
 	 */
 	public boolean exeSqlBool(StringBuffer sql,Map<String, Object> mapSQLParameter) throws Exception {
-		Map<String, Object> mapSQLParameterTemp = new HashMap<String, Object>();
-		StringBuffer sqlTemp = new StringBuffer();
-		sqlTemp.append("insert into util_log(log_id,log_par_content,log_sql_content,gxsj)");
-		sqlTemp.append("values(:log_id,:log_par_content,:log_sql_content,:gxsj)");
-		mapSQLParameterTemp.put("log_id",UtilSql.getTimeId());
-		mapSQLParameterTemp.put("log_par_content", UtilJson.mapToJson(mapSQLParameter));
-		mapSQLParameterTemp.put("log_sql_content", sql);
-		mapSQLParameterTemp.put("gxsj", UtilSql.getGXSJ());
-		this.exeSqlBool_log(sqlTemp, mapSQLParameterTemp);
-		
 		return this.getNamedParameterJdbcTemplate().update(UtilStr.getStr(sql),mapSQLParameter) > 0 ? true : false;
 	}
 	

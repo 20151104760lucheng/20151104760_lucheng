@@ -14,7 +14,7 @@
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right">
 				<input type="text" placeholder="账号" id="update_username" class="col-xs-12"
-					data-validate="required:账号必填">
+					data-validate="required:帐户名必填,ajax#zhangHu_isExistName.do?zh_zhm=:用户名已注册">
 				</span>
 			</div>
 		</div>

@@ -54,36 +54,7 @@ public class LoginController extends ControllerUtil {
 		return this.returnError();
 	}
 	
-	/**
-	 * 登录验证
-	 * @return String
-	 */
-	@RequestMapping(value = "/register_valiDate.do")
-	@AccessRequired //添加过滤器
-	public String register(HttpServletRequest req,HttpServletResponse resp) {
-		try {
-			Map<String,String> mapStr = UtilJson.toMap(req.getParameter("mapStr"));
-			logger.info("用户注册"+mapStr);
-			if(!UtilValiDate.isEmpty(mapStr.get("zh_zhm")) || !UtilValiDate.isEmpty(mapStr.get("zh_zhmm"))){
-				logger.info("注册结果：用户名或密码为空!");
-				req.setAttribute("infoError", "用户名或密码为空!");
-				return "form/login/login.jsp";
-			}
-			if(!zhangHuServiceImp.isExistName(mapStr)){
-					logger.info("注册结果：注册成功!");
-					zhangHuServiceImp.add_Data(mapStr);
-					req.setAttribute("infoError", "注册成功!");
-					return "form/login/login.jsp" ;
-			}else {
-				logger.info("注册结果：当前帐号已被使用!");
-				req.setAttribute("infoError", "当前帐号已被使用!");
-				return "form/login/login.jsp";
-			}
-		} catch (Exception e) {
-			this.errorResp(e,resp);
-		}
-		return this.returnError();
-	}
+	
 
 	/**
 	 * 跳转到login页面
@@ -95,6 +66,13 @@ public class LoginController extends ControllerUtil {
 	public String result(HttpServletRequest req,HttpServletResponse resp) {
 		req.getSession().invalidate();
 		return "form/login/login.jsp";
+	}
+	
+	
+	@RequestMapping(value = "/AdminLogin.do")
+	@AccessRequired //添加过滤器
+	public String adminLogin(HttpServletRequest req,HttpServletResponse resp) {
+		return "form/login/adminLogin.jsp";
 	}
 	
 

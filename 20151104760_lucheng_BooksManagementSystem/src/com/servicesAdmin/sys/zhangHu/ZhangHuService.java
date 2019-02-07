@@ -99,4 +99,6 @@ public interface ZhangHuService {
 	 * @throws Exception
 	 */
 	public boolean update_Password(Map<String, String> mapStr) throws Exception;
+	
+	public void delete(Map<String, String> mapStr) throws Exception;
 }

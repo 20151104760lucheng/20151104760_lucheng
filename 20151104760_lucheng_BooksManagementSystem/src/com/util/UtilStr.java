@@ -131,7 +131,7 @@ public class UtilStr {
 	
 	/**
 	 * @sm 解析字符串 如(1-2-3-4) 变成一个list集合
-	 * @author 李飞
+	 * @author 
 	 * @param str
 	 *            需要进行分割的字符串
 	 * @param fgf

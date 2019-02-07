@@ -44,8 +44,8 @@ public class ZhangHuServiceImp implements ZhangHuService {
 			mapSQLParameter.put("zh_id", mapStr.get("zh_id"));
 		} else {
 			if (UtilValiDate.isEmpty(mapStr.get("zh_zhm"))) {
-				sql.append(" and zhb.zh_zhm like :zh_zhm ");
-				mapSQLParameter.put("zh_zhm", "%" + mapStr.get("zh_zhm") + "%");
+				sql.append(" and zhb.zh_zhm = :zh_zhm ");
+				mapSQLParameter.put("zh_zhm",  mapStr.get("zh_zhm"));
 			}
 		}
 	}
@@ -116,7 +116,7 @@ public class ZhangHuServiceImp implements ZhangHuService {
 		sql.append(UtilSql.getFieldInsertVal());
 		mapSQLParameter.put("zh_id", mapStr.get("zh_id"));
 		mapSQLParameter.put("zh_zhm", mapStr.get("zh_zhm"));
-		mapSQLParameter.put("zh_zhmm", (mapStr.get("zh_zhmm")));
+		mapSQLParameter.put("zh_zhmm",(mapStr.get("zh_zhmm")));
 		UtilSql.setMapVal(mapSQLParameter, mapStr);
 		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
 	}
@@ -167,7 +167,7 @@ public class ZhangHuServiceImp implements ZhangHuService {
 		Map<String, Object> mapSQLParameter = new HashMap<String, Object>();
 		sql.append("update  qx_zhb set zh_zhmm=:zh_zhmm");
 		sql.append(" where zh_id=:zh_id ");
-		mapSQLParameter.put("zh_zhmm", ("000000"));
+		mapSQLParameter.put("zh_zhmm",("000000"));
 		mapSQLParameter.put("zh_id", mapStr.get("zh_id"));
 		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
 	}
@@ -238,8 +238,22 @@ public class ZhangHuServiceImp implements ZhangHuService {
 		StringBuffer sql = new StringBuffer(); Map<String, Object> mapSQLParameter = new HashMap<String, Object>();
 		sql.append("select t.zh_id from qx_zhb t where t.zh_id=:zh_id and t.zh_zhmm=:zh_zhmm");
 		mapSQLParameter.put("zh_id", mapStr.get("zh_id"));
-		mapSQLParameter.put("zh_zhmm", (mapStr.get("zh_zhmm")));
+		mapSQLParameter.put("zh_zhmm",(mapStr.get("zh_zhmm")));
 		return gyDAOimp.findSqlBool(sql, mapSQLParameter);
+	}
+	
+	public void delete(Map<String, String> mapStr) throws Exception{
+		StringBuffer sql = new StringBuffer(); 
+		Map<String, Object> mapSQLParameter = new HashMap<String, Object>();
+		// 第一步将qx_js_gnsb表中对应JS_ID的数据全部删除
+		sql.append("delete from qx_js_zhb where zh_id=:zh_id and js_id<>'0'");
+		mapSQLParameter.put("zh_id", mapStr.get("zh_id"));
+		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
+		sql.setLength(0);
+		sql.append("delete from qx_zhb where zh_id=:zh_id");
+		mapSQLParameter.put("id", mapStr.get("id"));
+		this.gyDAOimp.exeSqlBool(sql, mapSQLParameter);
+		
 	}
 
 	/**
@@ -255,7 +269,7 @@ public class ZhangHuServiceImp implements ZhangHuService {
 		sql.append(" where zh_id=:zh_id ");
 		mapSQLParameter.put("gxsj", UtilSql.getGXSJ());
 		mapSQLParameter.put("zh_id", mapStr.get("zh_id"));
-		mapSQLParameter.put("zh_zhmm", (mapStr.get("zh_zhmm")));
+		mapSQLParameter.put("zh_zhmm",(mapStr.get("zh_zhmm")));
 		return gyDAOimp.exeSqlBool(sql, mapSQLParameter);
 	}
 }

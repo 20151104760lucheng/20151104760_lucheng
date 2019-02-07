@@ -14,7 +14,7 @@
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right">
 					<input type="text" placeholder="账号" id="update_username" class="col-xs-12"
-						data-validate="required:账号必填" value="${map.username}" onchange="$('#isUpdate').attr('value','y')">
+					 readonly="readonly"	data-validate="required:账号必填" value="${map.username}" onchange="$('#isUpdate').attr('value','y')">
 				</span>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 			<div class="col-sm-5">
 				<span class="block input-icon input-icon-right">
 					<input type="text" placeholder="密码" id="update_password" class="col-xs-12"
-						data-validate="required:密码必填" value="${map.password}" onchange="$('#isUpdate').attr('value','y')">
+						readonly="readonly" data-validate="required:密码必填" value="${map.password}" onchange="$('#isUpdate').attr('value','y')">
 				</span>
 			</div>
 		</div>
